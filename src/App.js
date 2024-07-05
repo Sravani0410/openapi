@@ -1,48 +1,60 @@
-import logo from './logo.svg';
-import {useEffect, useState} from "react";
-import './App.css';
-import {run} from './openApiAi';
+import { useEffect, useState } from "react";
+import "./App.css";
+import { run, displayData } from "./openApiAi";
 
 function App() {
-  const [text,setText]=useState("");
-  const [response,setResponse]=useState([]);
+  const [text, setText] = useState("");
+  const [response, setResponse] = useState([]);
 
   const handleChange = (e) => {
     setText(e.target.value);
-  }
-  const handleSubmit = async(e) => {
+  };
+  const handleSubmit = async (e) => {
     // console.log("working")
     e.preventDefault();
-    try{
-      const result=await run(text);
-      console.log("result",result)
+    try {
+      const result = await run(text);
+      // console.log("result", result);
       setResponse(result);
-      setText('')
+      setText("");
+    } catch (err) {
+      console.log(err);
     }
-    catch(err){
-      console.log(err)
-    }
-  }
+  };
 
-  useEffect(()=>{
-     const chatFetchData=async()=>{
-       try{
-        //  console.log("gemini key value",process.env.REACT_APP_GEMINI_API_KEY)
-       }
-       catch(err){
-        console.log(err)
-       }
-     }
-     chatFetchData()
-  },[])
-  // console.log("response",response)
+  useEffect(() => {
+    const chatFetchData = async () => {
+      try {
+        const data = await displayData();
+        // console.log("data", data);
+        setResponse(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    chatFetchData();
+  }, []);
+  // console.log("response", response);
   return (
     <div className="App">
       <div>
-        {response}
+        {response.length > 0 ? (
+          <>
+            {response.map((item, index) => (
+              <div key={index}>
+                <p>
+                  <strong>{item.Prompt}</strong>
+                </p>
+                <div>{item.Post}</div>
+              </div>
+            ))}
+          </>
+        ) : (
+          <p>No data Available</p>
+        )}
       </div>
       <form onSubmit={handleSubmit}>
-        <textarea 
+        <textarea
           placeholder="Enter a text here...."
           value={text}
           onChange={handleChange}

@@ -12,7 +12,7 @@ export async function run(prompt) {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    console.log(text);
+    // console.log(text);
     const data={
       Timestamps:new Date().toLocaleString(),
       Prompt:prompt,
@@ -32,6 +32,13 @@ async function fetchData(data) {
     });
 }
 
+export async function displayData(){
+  const response=await fetch(GOOGLE_SHEET,{
+    method: 'GET',
+  });
+  const data=await response.json();
+  return data
+}
 
 
 
