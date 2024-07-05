@@ -14,7 +14,7 @@ export async function run(prompt) {
     const text = response.text();
     console.log(text);
     const data={
-      Timestamp:Date.now(),
+      Timestamps:new Date().toLocaleString(),
       Prompt:prompt,
       Post:text,
     }
