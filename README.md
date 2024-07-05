@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# TMD: FullStack Intern Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This assignment involves setting up a web application where users can input a prompt to generate social media posts text using OpenAI's API. These posts should then be saved to a Google Spreadsheet using Google Sheets API (without using Google SDKs). For a bonus, the application should be able to fetch and display the posts from the spreadsheet.
 
-In the project directory, you can run:
+## Deployed App
+[Live Demo](https://openapi-nine.vercel.app/)
+[Google Sheet](https://docs.google.com/spreadsheets/d/19o82dBz2WYCwOyYqGSijCtawozby-wh633Z6ZI1SeT4/edit?gid=0#gid=0)
 
-### `npm start`
+## Your Tasks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Generate Social Media Posts**:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - Use OpenAI's API to generate social media posts texts based on the user's prompt.
+   - Ensure that you use your own OpenAI API key.
 
-### `npm test`
+2. **Create and Use a Google Spreadsheet**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - Create a new Google Spreadsheet in your Google account.
+   - Get the Required keys from your own Google Cloud Console.
 
-### `npm run build`
+3. **Save Posts to Google Spreadsheet**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - Save the generated social media posts to the newly created Google Spreadsheet using the Google Sheets API.
+   - The spreadsheet should contain the following columns:
+     - `Timestamp`: The date and time when the post was created.
+     - `Prompt`: The original user input.
+     - `Post`: The generated social media post.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Bonus: Retrieve and Display Posts**:
+   - Fetch the social media posts from the Google Spreadsheet.
+   - Display the fetched posts text on the UI below the input field.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Estimated Time
 
-### `npm run eject`
+Please spend no more than 1 day on this assignment and submit whatever you can complete within that time frame.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Bonus Tasks
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Retrieve and display the generated posts from the Google Spreadsheet on the UI.
+2. Add error handling and user feedback for API requests.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Submission
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Ensure all your changes are committed.
+2. Push your changes to a new repository on your personal GitHub account with public access.
+3. Provide a link to your repository, along with your email and phone number, in the provided Google Form.
+4. Include the URL of your Google Spreadsheet in your README.
 
-## Learn More
+#### Note: Use your API keys for development purposes only. Include the variables in the `.env.example` file for reference.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Important Note:
+Do not use the googleapis package or any Google SDKs. Interact with the Google Sheets API using direct HTTP requests instead.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Installation & Getting Started
+To run the project locally, follow these steps:
 
-### Code Splitting
+### Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    git clone https://github.com/Sravani0410/openapi.git
+    
 
-### Analyzing the Bundle Size
+### Install dependencies
+ 
+    npm install 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Start the application
 
-### Making a Progressive Web App
+   npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technology Stack && Sources Used
 
-### Advanced Configuration
+**React.js:** React. js, a frontend-focused JS library used mainly for building single-page and multi-page interfaces, is one of the most popular programming technologies worldwide, and the number of companies reaching out to it proves its solid position.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Gemini AI:** https://ai.google.dev/gemini-api/docs/quickstart?lang=node
 
-### Deployment
+**sheetdb:** https://sheetdb.io/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Google SpreadSheet
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://docs.google.com/spreadsheets/d/19o82dBz2WYCwOyYqGSijCtawozby-wh633Z6ZI1SeT4/edit?gid=0#gid=0
