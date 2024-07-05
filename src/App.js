@@ -41,11 +41,12 @@ function App() {
         {response.length > 0 ? (
           <>
             {response.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="response-item">
                 <p>
                   <strong>{item.Prompt}</strong>
+                  <strong>{item.Timestamps}</strong>
                 </p>
-                <div>{item.Post}</div>
+                <div className="post">{item.Post}</div>
               </div>
             ))}
           </>
@@ -55,7 +56,7 @@ function App() {
       </div>
       <form onSubmit={handleSubmit}>
         <textarea
-          placeholder="Enter a text here...."
+          placeholder="Enter a Prompt here...."
           value={text}
           onChange={handleChange}
         />
